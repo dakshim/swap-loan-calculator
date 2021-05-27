@@ -33,7 +33,8 @@ Fonts - Roboto
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
+	font-family: 'Segoe UI' !important;
 	font-size: 15px;
 	line-height: 1.57143;
 	font-weight: 400;
@@ -187,18 +188,24 @@ section {
 	line-height: 1;
 	font-weight: 500;
 }
-
+header{
+	z-index: 99;
+}
 .header-scrolled {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 75px;
 	background-color: #fff !important;
 	-webkit-box-shadow: 0 4px 6px 0 rgba(12, 0, 46, .05);
 	box-shadow: 0 4px 6px 0 rgba(12, 0, 46, .05);
 }
-
+header .swap-calculator-brand-logo img{
+	transition: .3s all ease;
+}
+.header-scrolled .swap-calculator-brand-logo img{
+	max-width: 180px;
+}
 .header {
 	display: flex;
 	width: 100%;
@@ -209,6 +216,7 @@ section {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: top;
+    background-color: #fffbed;
 }
 
 .header-container {
@@ -219,39 +227,38 @@ section {
 }
 
 .learn-more-btn {
-    background-color: #322153;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: #fff;
-    padding: 12px 40px !important;
-	border-radius: 100px;
-	letter-spacing: 1px;
+    padding: 7px 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background-color: #81d742;
+    font-size: 15px;
+    border: 1px solid #81d742;
+    border-radius: 5px;
 }
 .learn-more-btn:hover,
 .learn-more-btn:active,
 .learn-more-btn:focus {
-	color: #322153;
-    background-color: #84BD5A;
+	color: #81d742;
+    background-color: transparent;
 }
 #navbar .nav-link.learn-more-btn {
 	color: #ffffff;
 }
 p.header-subtitle {
-    color: #fff;
-    font-size: 16px;
-    background: #3bba44;
-    display: inline-block;
-    padding: 5px 10px;
+    font-size: 20px;
+    color: #3bba44;
     margin-bottom: 13px;
+    font-weight: 600;
     letter-spacing: 1px;
-    border-radius: 10px;
 }
 .header-title {
-	font-weight: 600;
-    font-size: 50px;
+    font-weight: 700;
+    font-size: 56px;
     padding-bottom: 30px;
-	color: #322153;
+    color: #000000;
+    letter-spacing: 0;
 }
 .header-title-text{
 	color: #777777;
@@ -267,44 +274,139 @@ p.header-subtitle {
 /*==== calculator ======*/
 .calculator-section{
 	padding: 100px 0;
-	background-color: rgba(0,0,0,0.035);
+    background-color: #1a191d;
 }
-.form-calculator{
-	padding: 20px;
-	background: #fff;
-	margin-top: 30px;
+.form-calculator {
+    padding: 20px;
+    background: rgb(35 35 35 / 62%);
+    height: 100%;
+    border-radius: 10px;
+}
+.form-calculator label {
+    color: #a5a5a5;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.form-calculator .form-group {
+    margin-bottom: 15px;
+}
+
+.form-calculator .form-group:last-child {
+    margin-bottom: 0;
+}
+.form-calculator .form-group .emi-input input {
+    width: 100%;
+}
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+	height: 16px;
+	width: 16px;
+	margin-top: -6px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+
+.calculator-section ul.nav {
+    margin-bottom: 40px;	
+    padding-right: calc(var(--bs-gutter-x)/ 2);
+    padding-left: calc(var(--bs-gutter-x)/ 2);
+}
+.calculator-section ul.nav .nav-item a {
+    color: #81d742;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 40px;
+    padding: 9px 35px;
+    border: 1px solid #81d742;
+    margin: 10px 15px 10px 0;
+}
+
+.calculator-section ul.nav .nav-item a.active, .calculator-section ul.nav .nav-item a:hover {
+    background-color: #81d742;
+    color: #fff;
 }
 .emi-details {
-	background: #fff;
-	margin-top: 30px;
+    background: rgb(35 35 35 / 62%);
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .emi-details-head{
-	background-color: rgba(129,185,88,0.6);
+    background-color: #81d742;
     padding: 10px;
 	text-align: center;
 }
-.emi-details-head h3{
-	color: #322153;
+.emi-details-head h3 {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 25px;
 }
 .emi-details-box {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
+    padding: 16px 20px;
+    border-bottom: 1px solid #545454;
 }
 .emi-details-box h5{
-	color: #322153;
+    color: #fff;
 	font-weight: bold;
-	font-size: 31px;
+	font-size: 30px;
 }
+.emi-details-box h5 span {
+    font-size: 19px;
+    margin-right: 3px;
+    font-weight: 600;
+    vertical-align: top;
+    margin-top: 4px;
+    display: inline-block;
+}
+.emi-details-box p {
+    color: #a5a5a5;
+    font-size: 17px;
+    margin: 0 0 8px;
+}
+
+
 .no-bottom-border{
 	border-bottom: none;
 }
 .pie-chart{
 	padding: 20px;
-	background: #fff;
-	margin-top: 30px;
+    background: rgb(35 35 35 / 62%);
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.pie-chart .chartMain {
+	width: 100%;
 }
 .pie-chart text tspan{
 	font-weight: 500 !important;
+}
+.pie-chart .mixed-chart .apexcharts-legend-series span {
+    color: #fff !important;
 }
 .chart-principal, .chart-interest{
 	position: relative;
@@ -329,26 +431,21 @@ p.header-subtitle {
 	top: 3px;
     left: -14px;
 }
-
+.calculator_sec {
+    margin-top: 60px;
+}
 
 /*===== section ====== */
 h2.section-heading {
-    color: #322153;
-    font-weight: bold;
-	margin-bottom: 30px;
-	position: relative;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 44px;
 }
-h2.section-heading::before{
-	position: absolute;
-    content: "";
-    width: 50px;
-    height: 5px;
-    background-color: #84BD5A;
-    bottom: -10px;
-    border-radius: 5px;
-}
+
 p.section-para {
-    color: #666;
+    color: #ffffff;
     width: 70%;
 	font-size: 17px;
 	margin-bottom: 0;
@@ -357,8 +454,8 @@ p.section-para {
 /* ===== footer ======= */
 .footer{
 	padding: 30px 0;
-    border-top: 5px solid #84BD5A;
-	background-color: #322153;
+    border-top: 2px solid #84BD5A;
+    background-color: #2f2f2f;
 }
 .footer-widget{
 	margin-top: 20px;
@@ -398,6 +495,12 @@ p.section-para {
 .footer-copyright {
     color: #ffff;
     text-align: center;
+}
+.footer-copyright a {
+    color: #81d742;
+}
+.footer-copyright a:hover {
+    color: #ffffff;
 }
 
 /*
@@ -471,6 +574,21 @@ p.section-para {
 	}
 	p.section-para{
 		width: 100%;
+	}
+	header .swap-calculator-brand-logo img {
+		max-width: 200px;
+	}
+	
+	.header-title {
+		font-size: 40px;
+	}
+	
+	.emi-details {
+		margin: 20px 0px;
+		height: auto;
+	}
+	h2.section-heading {
+		font-size: 32px;
 	}
 
 }
